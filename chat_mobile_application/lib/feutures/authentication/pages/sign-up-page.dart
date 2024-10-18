@@ -18,7 +18,7 @@ class _SignupPageState extends State<SignupPage> {
   bool _isConfirmPasswordVisible = false;
 
   String? _emailError;
-  Color _borderColorForEmail = Colors.grey;
+  Color _borderColorForEmail = Colors.blue;
   String? _passwordError;
   bool _isLoading = false; 
 
@@ -104,7 +104,7 @@ class _SignupPageState extends State<SignupPage> {
                         controller: _nameController,
                         decoration: customInputDecoration(
                           labelText: 'Name',
-                          suffixIcon: const Icon(Icons.person, color: Colors.blue),
+                          suffixIcon: const Icon(Icons.person, color: Colors.grey),
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -115,14 +115,14 @@ class _SignupPageState extends State<SignupPage> {
                           fillColor: Colors.white,
                           filled: true,
                           labelText: 'Email',
-                          suffixIcon: const Icon(Icons.email, color: Colors.blue),
+                          suffixIcon: const Icon(Icons.email, color: Colors.grey),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10.0),
                             borderSide: BorderSide(color: _borderColorForEmail, width: 2.0),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10.0),
-                            borderSide: const BorderSide(color: Colors.blue, width: 2.0),
+                            borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                           ),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10.0),
@@ -147,7 +147,7 @@ class _SignupPageState extends State<SignupPage> {
                           } else {
                             setState(() {
                               _emailError = null;
-                              _borderColorForEmail = Colors.blue;
+                              _borderColorForEmail = Colors.grey;
                             });
                           }
                         },
@@ -199,7 +199,7 @@ class _SignupPageState extends State<SignupPage> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
                             ),
-                            backgroundColor: Colors.blue,
+                            backgroundColor: Colors.grey,
                           ),
                           child:  _isLoading ? const CircularProgressIndicator(color:Colors.white,):
                               const Text(

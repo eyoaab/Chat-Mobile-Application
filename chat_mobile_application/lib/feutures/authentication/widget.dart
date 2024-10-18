@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 InputDecoration customInputDecoration({
   required String labelText,
   required Icon suffixIcon,
-  Color enabledBorderColor = Colors.grey,
+  Color enabledBorderColor = Colors.blue,
   Color errorBorderColor = Colors.red,
 }) {
   return InputDecoration(
@@ -20,7 +20,7 @@ InputDecoration customInputDecoration({
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.0),
       
-      borderSide: const BorderSide(color: Colors.blue
+      borderSide: const BorderSide(color: Colors.grey
 ),
     ),
     errorBorder: OutlineInputBorder(
@@ -49,7 +49,7 @@ InputDecoration passwordInputDecoration({
     suffixIcon: IconButton(
       icon: Icon(
         isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-        color: Colors.blue,
+        color: Colors.grey,
       ),
       onPressed: togglePasswordVisibility,
     ),
@@ -61,7 +61,7 @@ InputDecoration passwordInputDecoration({
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.0),
       
-      borderSide: const BorderSide(color: Colors.blue, width: 2.0),
+      borderSide: const BorderSide(color: Colors.grey, width: 2.0),
     ),
     errorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.0),
@@ -72,6 +72,11 @@ InputDecoration passwordInputDecoration({
       borderRadius: BorderRadius.circular(10.0),
       
       borderSide: const BorderSide(color: Colors.red, width: 2.0),
+    ),
+     enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10.0),
+      
+      borderSide: const  BorderSide(color: Colors.blue,width: 2.0),
     ),
   );
 }

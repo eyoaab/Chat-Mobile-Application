@@ -2,7 +2,6 @@
 import 'package:chat_mobile_application/feutures/authentication/pages/sign-up-page.dart';
 import 'package:chat_mobile_application/feutures/authentication/widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -14,7 +13,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordController = TextEditingController();
   bool _isPasswordVisible = false;
   String? _emailError;
-  Color _borderColor = Colors.grey;
+  Color _borderColor = Colors.blue;
   bool _isLoading = false; 
 
 
@@ -70,12 +69,12 @@ class _LoginPageState extends State<LoginPage> {
                         labelText: 'Email',
                         fillColor: Colors.white,
                         filled: true,
-                        suffixIcon: Icon(Icons.email, color: Colors.blue),
+                        suffixIcon: const Icon(Icons.email, color: Colors.grey),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: _borderColor, width: 2.0),
                         ),
                         focusedBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                          borderSide: BorderSide(color: Colors.grey, width: 2.0),
                         ),
                         errorBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.red, width: 2.0),
@@ -99,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                         } else {
                           setState(() {
                             _emailError = null;
-                            _borderColor = Colors.blue;
+                            _borderColor = Colors.grey;
                           });
                         }
                       },
@@ -121,15 +120,15 @@ class _LoginPageState extends State<LoginPage> {
                         suffixIcon: IconButton(
                           icon: Icon(
                             _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                            color: Colors.blue,
+                            color: Colors.grey,
                           ),
                           onPressed: _togglePasswordVisibility,
                         ),
                         enabledBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                          borderSide: BorderSide(color: Colors.blue, width: 2.0),
                         ),
                         focusedBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                          borderSide: BorderSide(color: Colors.grey, width: 2.0),
                         ),
                       ),
                     ),
@@ -143,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
-                          backgroundColor: Colors.blue,
+                          backgroundColor: Colors.grey,
                         ),
                         child: _isLoading ? const CircularProgressIndicator(color:Colors.white):const Text(
                           'Log in',
