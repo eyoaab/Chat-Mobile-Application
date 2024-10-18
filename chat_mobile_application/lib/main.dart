@@ -1,3 +1,4 @@
+import 'package:chat_mobile_application/feutures/authentication/pages/login-page.dart';
 import 'package:chat_mobile_application/firebase_options.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Placeholder(),
+      home:  LoginPage(),
     );
   }
 }

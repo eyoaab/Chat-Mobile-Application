@@ -76,7 +76,7 @@ class AuthServices {
     }
   }
 
-  Future<List<UserModel>> fetchUsersByIds(List<String> userIds) async {
+  Future<List<UserModel>> getUsersById(List<String> userIds) async {
 
     try {
       List<UserModel> users = [];
@@ -88,6 +88,22 @@ class AuthServices {
           UserModel user = UserModel.fromJson(userDoc.data() as Map<String, dynamic>);
           users.add(user);
         }
+      }
+
+      return users;
+    } catch (e) {
+      log("Error fetching users: $e");
+      return [];
+    }
+  }
+  
+Future<List<UserModel>> getAllUsers() async {
+    try {
+      QuerySnapshot userDocs = await _firestore.collection('users').get();
+      List<UserModel> users = [];
+
+      for (QueryDocumentSnapshot doc in userDocs.docs) {
+        users.add(UserModel.fromJson(doc.data() as Map<String, dynamic>));
       }
 
       return users;
@@ -114,3 +130,4 @@ class AuthServices {
   }
 
 }
+
